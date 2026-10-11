@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.vercel/
+public/places/*/
+!public/places/rishikesh/
+!public/places/jaisalmer/
+!public/places/bali/
+!public/places/spiti-valley/
+!public/places/kyoto/
+!public/places/alleppey/
