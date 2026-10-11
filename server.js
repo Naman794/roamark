@@ -23,7 +23,9 @@ let connection;async function db(){if(!process.env.MONGODB_URI)throw Object.assi
 const hash=s=>createHash('sha256').update(s).digest('hex');
 const otpHash=(email,code)=>createHmac('sha256',process.env.OTP_SECRET).update(email+':'+code).digest('hex');
 app.set('trust proxy',1);app.disable('x-powered-by');app.use(helmet({contentSecurityPolicy:false}));app.use(express.json({limit:'16kb'}));app.use(cookieParser());
-app.use('/api',async(req,res,next)=>{try{if(!['GET','HEAD'].includes(req.method)){const origin=req.get('origin');if(!process.env.APP_URL||origin!==new URL(process.env.APP_URL).origin)return res.status(403).json({error:'Request origin is not allowed.'});}next()}catch{res.status(403).json({error:'Invalid request origin.'})}});
+// Browser mutations must originate from this deployment or an explicitly configured origin.
+// Render and Vercel terminate TLS upstream; Express uses the trusted proxy protocol.
+app.use('/api',(req,res,next)=>{if(['GET','HEAD'].includes(req.method))return next();const origin=req.get('origin');const allowed=new Set();try{allowed.add(new URL(req.protocol+'://'+req.get('host')).origin);if(process.env.APP_URL)allowed.add(new URL(process.env.APP_URL).origin);}catch{return res.status(403).json({error:'Invalid request origin.'})}if(!origin||!allowed.has(origin)||req.get('sec-fetch-site')==='cross-site')return res.status(403).json({error:'Request origin is not allowed.'});next();});
 app.get('/api/health',(req,res)=>res.json({status:'ok',temporaryAccessEnabled:process.env.ENABLE_TEMP_ACCESS==='true',accountsConfigured:Boolean(process.env.MONGODB_URI&&process.env.OTP_SECRET&&process.env.SMTP_HOST&&process.env.SMTP_USER&&process.env.SMTP_PASS)}));
 async function rate(key,max,seconds){const bucket=Math.floor(Date.now()/(seconds*1000));const r=await Limit.findOneAndUpdate({_id:hash(key)+':'+bucket},{$inc:{count:1},$setOnInsert:{expiresAt:new Date(Date.now()+seconds*2000)}},{upsert:true,new:true});if(r.count>max)throw Object.assign(new Error('Too many attempts. Please try later.'),{status:429});}
 const emailOf=s=>typeof s==='string'?s.trim().toLowerCase():'';
