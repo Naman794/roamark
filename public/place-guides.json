@@ -1,0 +1,374 @@
+{
+  "rishikesh": {
+    "overview": [
+      "Rishikesh lies beside the Ganga in the Himalayan foothills of Uttarakhand. Its identity combines pilgrimage, riverside neighborhoods, ashrams and yoga with outdoor experiences in the surrounding area. Visitors arrive with different expectations: a spiritual retreat, a café-centered stay, or time on the river.",
+      "The town is known for yoga and meditation, and Uttarakhand Tourism highlights river activities around Shivpuri. A rewarding visit can bring together the ghats, an ashram or cultural stop, and one carefully chosen activity. Treat these as different parts of a journey rather than interchangeable attractions."
+    ],
+    "highlights": [
+      "Ganga-side pilgrimage",
+      "Yoga and meditation",
+      "River activities around Shivpuri"
+    ],
+    "fit": "Yoga travelers, friends planning outdoor activities, and visitors who enjoy walking between riverside neighborhoods.",
+    "trade": "Popular ghats and café areas can be busy. A peaceful visit depends on your timing and the exact neighborhood.",
+    "sources": [
+      {
+        "label": "Uttarakhand Tourism",
+        "url": "https://www.uttarakhandtourism.gov.in/destination/rishikesh"
+      }
+    ],
+    "checkedOn": "2026-10-13",
+    "plan": [
+      {
+        "title": "Choose your timing",
+        "text": "Compare cooler-season walking plans with activity availability. Monsoon river conditions can affect outdoor operations; confirm rafting availability directly rather than assuming year-round access.",
+        "tag": "Season & pace"
+      },
+      {
+        "title": "Map your arrival",
+        "text": "Compare routes through Dehradun airport, Rishikesh or Haridwar rail connections, and road transport. Check the final transfer to your chosen stay before booking.",
+        "tag": "Getting there"
+      },
+      {
+        "title": "Move with a plan",
+        "text": "Walk within a neighborhood; use a local transfer for longer hops. Do not build an itinerary around a bridge crossing without checking current access.",
+        "tag": "Local transport"
+      },
+      {
+        "title": "Choose your base",
+        "text": "Tapovan — cafés and a convenient tourism base; compare road noise and walkability. Swarg Ashram area — riverside atmosphere; confirm vehicle access and luggage transfers.",
+        "tag": "Stay & neighborhood"
+      },
+      {
+        "title": "Build your budget",
+        "text": "Compare accommodation, transport, entry costs and activity quotes separately. Check the currency, inclusions, cancellation terms and any seasonal changes before paying.",
+        "tag": "Costs to confirm"
+      },
+      {
+        "title": "Check the small details",
+        "text": "Ask about opening hours, walking surfaces, steps, toilets and photography rules at your chosen stops. Confirm permits or operator requirements directly.",
+        "tag": "Access & etiquette"
+      }
+    ]
+  },
+  "jaisalmer": {
+    "overview": [
+      "Jaisalmer is Rajasthan’s Golden City, close to the Thar Desert. Sandstone architecture, the fort and historic havelis give the city a character distinct from the desert experiences outside it. Rajasthan Tourism also highlights nearby cultural sites, fossil landscapes and dune excursions.",
+      "Sam and Khuri are among the areas associated with camel safaris and desert stays. The city and dunes offer different experiences: walking among historic buildings is not the same as an excursion or camp evening. Plan them separately and compare what an operator actually includes before choosing a package."
+    ],
+    "highlights": [
+      "Sandstone architecture",
+      "Fort and haveli visits",
+      "Sam and Khuri dune excursions"
+    ],
+    "fit": "Architecture lovers, photographers and travelers curious about desert landscapes and local craft.",
+    "trade": "Desert experiences vary widely by operator. Music, vehicles and large camps may feel very different from the silence in travel photographs.",
+    "sources": [
+      {
+        "label": "Rajasthan Tourism",
+        "url": "https://www.tourism.rajasthan.gov.in/jaisalmer.html"
+      }
+    ],
+    "checkedOn": "2026-10-13",
+    "plan": [
+      {
+        "title": "Choose your timing",
+        "text": "Compare cooler-month travel for comfortable sightseeing. Summer heat changes the pace of outdoor plans; check your forecast and camp conditions.",
+        "tag": "Season & pace"
+      },
+      {
+        "title": "Map your arrival",
+        "text": "Check available flights and trains for your actual dates, or compare a road connection through Jodhpur. Do not assume daily flight service.",
+        "tag": "Getting there"
+      },
+      {
+        "title": "Move with a plan",
+        "text": "Explore the old city on foot, with a separate vehicle plan for desert trips. Discuss luggage access with a fort-area property.",
+        "tag": "Local transport"
+      },
+      {
+        "title": "Choose your base",
+        "text": "Old city — atmosphere and walking access; check stairs and vehicle access. Outside the fort — easier pickups and a broader choice of properties.",
+        "tag": "Stay & neighborhood"
+      },
+      {
+        "title": "Build your budget",
+        "text": "Compare accommodation, transport, entry costs and activity quotes separately. Check the currency, inclusions, cancellation terms and any seasonal changes before paying.",
+        "tag": "Costs to confirm"
+      },
+      {
+        "title": "Check the small details",
+        "text": "Ask about opening hours, walking surfaces, steps, toilets and photography rules at your chosen stops. Confirm permits or operator requirements directly.",
+        "tag": "Access & etiquette"
+      }
+    ]
+  },
+  "spiti-valley": {
+    "overview": [
+      "Spiti is a Himalayan valley associated with stark highland scenery, the Spiti River and longstanding monasteries. Himachal Tourism describes a landscape of dramatic mountains, lakes and monastic settlements, where geography shapes both the journey and the experience of being there.",
+      "This is a destination to approach as a regional journey rather than a single sightseeing stop. Allow room for the landscape and cultural places without compressing transfers into a crowded checklist. Route access and conditions need separate checks before departure; a scenic photograph is not evidence that a road is currently open."
+    ],
+    "highlights": [
+      "Highland landscapes",
+      "Monastic settlements",
+      "Spiti River valley"
+    ],
+    "fit": "Patient road travelers, landscape enthusiasts and people interested in Buddhist heritage.",
+    "trade": "Long transfers and limited services can shape the experience. This is a route-planning destination, not a quick city break.",
+    "sources": [
+      {
+        "label": "Himachal Tourism",
+        "url": "https://himachaltourism.gov.in/destination/spiti-valley/"
+      }
+    ],
+    "checkedOn": "2026-10-13",
+    "plan": [
+      {
+        "title": "Choose your timing",
+        "text": "Route access is seasonal and conditions can change. Confirm the specific road corridor, local advisories and accommodation availability close to departure.",
+        "tag": "Season & pace"
+      },
+      {
+        "title": "Map your arrival",
+        "text": "Plan a road itinerary and compare approach routes with current access information. Include overnight stops and avoid treating map travel times as guarantees.",
+        "tag": "Getting there"
+      },
+      {
+        "title": "Move with a plan",
+        "text": "Arrange an experienced local driver where appropriate. Build spare time for road delays and do not rely solely on a live mobile connection.",
+        "tag": "Local transport"
+      },
+      {
+        "title": "Choose your base",
+        "text": "Kaza — compare as a service and excursion base. Village homestays — ask about meals, heating, toilets and electricity.",
+        "tag": "Stay & neighborhood"
+      },
+      {
+        "title": "Build your budget",
+        "text": "Compare accommodation, transport, entry costs and activity quotes separately. Check the currency, inclusions, cancellation terms and any seasonal changes before paying.",
+        "tag": "Costs to confirm"
+      },
+      {
+        "title": "Check the small details",
+        "text": "Ask about opening hours, walking surfaces, steps, toilets and photography rules at your chosen stops. Confirm permits or operator requirements directly.",
+        "tag": "Access & etiquette"
+      }
+    ]
+  },
+  "alleppey": {
+    "overview": [
+      "Alleppey, officially Alappuzha, is one of Kerala’s best-known backwater destinations. Its waterways are part of a wider coastal district with community life, religious centers, food traditions and cultural events. Kerala Tourism places particular emphasis on the district’s water-based heritage.",
+      "Boat journeys and waterside stays are only one way to experience the area. A visit can also include the coast and local cultural places, depending on interests and available time. Compare the route and facilities of a boat booking instead of treating every backwater trip as the same product."
+    ],
+    "highlights": [
+      "Backwater journeys",
+      "Coastal district",
+      "Local cultural heritage"
+    ],
+    "fit": "Slow travelers, couples and families who prefer a gentle itinerary and waterside scenery.",
+    "trade": "Boat comfort, route and inclusions vary. A beautiful listing photograph does not answer questions about noise, air conditioning or sanitation.",
+    "sources": [
+      {
+        "label": "Kerala Tourism",
+        "url": "https://www.keralatourism.org/districts/alappuzha/"
+      }
+    ],
+    "checkedOn": "2026-10-13",
+    "plan": [
+      {
+        "title": "Choose your timing",
+        "text": "Compare rainfall and your planned boat experience for the season. Confirm operator availability and local conditions close to travel.",
+        "tag": "Season & pace"
+      },
+      {
+        "title": "Map your arrival",
+        "text": "Compare rail and road access to Alappuzha with an airport transfer through Kochi. Verify the actual embarkation point separately from your accommodation address.",
+        "tag": "Getting there"
+      },
+      {
+        "title": "Move with a plan",
+        "text": "Use local road transfers for town stops and agree the boat pickup point in writing. Do not assume every backwater stay has direct road access.",
+        "tag": "Local transport"
+      },
+      {
+        "title": "Choose your base",
+        "text": "Town stays — practical for transport and shorter excursions. Backwater homestays — ask about access and nearby services.",
+        "tag": "Stay & neighborhood"
+      },
+      {
+        "title": "Build your budget",
+        "text": "Compare accommodation, transport, entry costs and activity quotes separately. Check the currency, inclusions, cancellation terms and any seasonal changes before paying.",
+        "tag": "Costs to confirm"
+      },
+      {
+        "title": "Check the small details",
+        "text": "Ask about opening hours, walking surfaces, steps, toilets and photography rules at your chosen stops. Confirm permits or operator requirements directly.",
+        "tag": "Access & etiquette"
+      }
+    ]
+  },
+  "bali": {
+    "overview": [
+      "Bali combines beaches, inland landscapes, temples and cultural traditions within one Indonesian island destination. Indonesia’s official tourism guide highlights experiences that range from the coast to ceremonial and religious sites, including the sea temple at Tanah Lot.",
+      "The island should not be treated as one compact neighborhood. A coast-focused holiday and a cultural or inland stay can involve different bases and transfers. Choose experiences around your interests and respect the rules of active religious places rather than planning only around photo opportunities."
+    ],
+    "highlights": [
+      "Coast and inland landscapes",
+      "Temple visits",
+      "Living cultural traditions"
+    ],
+    "fit": "Travelers combining beach time, art, food and cultural exploration with a flexible pace.",
+    "trade": "A long list of island stops can translate into long road transfers. A beach-club itinerary and an inland cultural trip offer different experiences.",
+    "sources": [
+      {
+        "label": "Indonesia Travel",
+        "url": "https://www.indonesia.travel/id/en/destination/bali-nusa-tenggara/bali"
+      }
+    ],
+    "checkedOn": "2026-10-13",
+    "plan": [
+      {
+        "title": "Choose your timing",
+        "text": "Compare local wet- and dry-season conditions with your chosen activities. Check the actual forecast and sea conditions before water excursions.",
+        "tag": "Season & pace"
+      },
+      {
+        "title": "Map your arrival",
+        "text": "Plan arrival through Bali’s international airport, then arrange the transfer to your chosen area. Verify immigration requirements using official channels for your nationality.",
+        "tag": "Getting there"
+      },
+      {
+        "title": "Move with a plan",
+        "text": "Plan road transfers by area. Compare reputable drivers and licensed transport; assess licensing, insurance and your ability before renting any vehicle.",
+        "tag": "Local transport"
+      },
+      {
+        "title": "Choose your base",
+        "text": "Ubud — an inland base for arts and cultural exploration. Sanur — a coastal option to compare for a more relaxed stay.",
+        "tag": "Stay & neighborhood"
+      },
+      {
+        "title": "Build your budget",
+        "text": "Compare accommodation, transport, entry costs and activity quotes separately. Check the currency, inclusions, cancellation terms and any seasonal changes before paying.",
+        "tag": "Costs to confirm"
+      },
+      {
+        "title": "Check the small details",
+        "text": "Ask about opening hours, walking surfaces, steps, toilets and photography rules at your chosen stops. Confirm permits or operator requirements directly.",
+        "tag": "Access & etiquette"
+      }
+    ]
+  },
+  "kyoto": {
+    "overview": [
+      "Kyoto offers a city-based journey through cultural places, neighborhoods and everyday urban life. Its official city guide encourages visitors to explore beyond the most familiar stops and pay attention to the way they move through the city and interact with its residents.",
+      "The city’s travel guidance emphasizes trains, subways and buses, together with respectful visitor behavior. Build days around areas rather than a long list of distant stops. Public transport choices, local etiquette and consideration for residents are part of the experience, not just logistics."
+    ],
+    "highlights": [
+      "Cultural city exploration",
+      "Neighborhood-based itineraries",
+      "Public transport and respectful travel"
+    ],
+    "fit": "Visitors interested in temples, gardens, food, craft and thoughtful urban walking.",
+    "trade": "Famous sites attract substantial crowds. Plan by geographic area and compare congestion information rather than crossing the city repeatedly.",
+    "sources": [
+      {
+        "label": "Kyoto City Official Guide",
+        "url": "https://kyoto.travel/en/getting-around/"
+      }
+    ],
+    "checkedOn": "2026-10-13",
+    "plan": [
+      {
+        "title": "Choose your timing",
+        "text": "Seasonal scenery influences demand. Compare crowd forecasts, accommodation availability and weather for your exact dates.",
+        "tag": "Season & pace"
+      },
+      {
+        "title": "Map your arrival",
+        "text": "Kyoto Station is an important rail gateway, including Shinkansen access. Compare your arrival airport and onward rail connection before booking.",
+        "tag": "Getting there"
+      },
+      {
+        "title": "Move with a plan",
+        "text": "Group nearby stops and compare rail, subway and bus routes. Leave time for walking, waiting and station navigation.",
+        "tag": "Local transport"
+      },
+      {
+        "title": "Choose your base",
+        "text": "Kyoto Station area — useful for arrival and onward journeys. Central Kyoto — compare for dining and city transport.",
+        "tag": "Stay & neighborhood"
+      },
+      {
+        "title": "Build your budget",
+        "text": "Compare accommodation, transport, entry costs and activity quotes separately. Check the currency, inclusions, cancellation terms and any seasonal changes before paying.",
+        "tag": "Costs to confirm"
+      },
+      {
+        "title": "Check the small details",
+        "text": "Ask about opening hours, walking surfaces, steps, toilets and photography rules at your chosen stops. Confirm permits or operator requirements directly.",
+        "tag": "Access & etiquette"
+      }
+    ]
+  },
+  "triund": {
+    "overview": [
+      "Triund is a mountain pasture and trekking destination above the Dharamshala area in Himachal Pradesh. Himachal Tourism lists it among the region’s trekking experiences and describes nearby villages as bases for the walk.",
+      "The attraction is the changing mountain landscape and the experience of reaching the open high ground. It is a walking journey, not a roadside viewpoint: weather, daylight and your chosen route shape the day. Official tourism guidance notes that weather around Triund can change quickly."
+    ],
+    "highlights": [
+      "Mountain pasture",
+      "Walking-focused journey",
+      "Dharamshala-area base"
+    ],
+    "fit": "Travelers interested in the place’s landscape or cultural context. Choose activities that suit your mobility, time and current conditions.",
+    "trade": "These background details do not verify current opening times, route conditions, facilities or prices.",
+    "sources": [
+      {
+        "url": "https://himachaltourism.gov.in/destination/dharamshala/",
+        "label": "Himachal Tourism"
+      }
+    ],
+    "checkedOn": "2026-10-13"
+  },
+  "tawang-monastery": {
+    "overview": [
+      "Tawang Monastery is an important Buddhist site in Arunachal Pradesh. India’s official tourism portal describes it as a major example of Mahayana Buddhism, founded in the seventeenth century in the eastern Himalayan setting.",
+      "A visit is about a living religious institution as well as its architecture and surroundings. Allow time to understand the setting, respect worship and follow local rules for entering buildings and taking photographs. A quieter atmosphere depends on the actual time and activity of your visit."
+    ],
+    "highlights": [
+      "Mahayana Buddhist heritage",
+      "Religious institution",
+      "Eastern Himalayan setting"
+    ],
+    "fit": "Travelers interested in the place’s landscape or cultural context. Choose activities that suit your mobility, time and current conditions.",
+    "trade": "These background details do not verify current opening times, route conditions, facilities or prices.",
+    "sources": [
+      {
+        "url": "https://www.incredibleindia.gov.in/en/arunachal-pradesh/tawang/tawang-monastery",
+        "label": "Incredible India"
+      }
+    ],
+    "checkedOn": "2026-10-13"
+  },
+  "diskit-monastery": {
+    "overview": [
+      "Diskit Monastery is situated in Ladakh’s Nubra Valley. District Leh’s tourism material highlights its cold-desert setting and the Maitreya Buddha statue, placing it within the region’s Buddhist cultural landscape.",
+      "The monastery forms part of a wider valley journey rather than an isolated city attraction. Combine interest in its cultural setting with practical planning for transport and walking at the site. Religious buildings and viewpoints may have different access or photography rules."
+    ],
+    "highlights": [
+      "Nubra Valley setting",
+      "Buddhist cultural landscape",
+      "Maitreya Buddha statue"
+    ],
+    "fit": "Travelers interested in the place’s landscape or cultural context. Choose activities that suit your mobility, time and current conditions.",
+    "trade": "These background details do not verify current opening times, route conditions, facilities or prices.",
+    "sources": [
+      {
+        "url": "https://leh.nic.in/swadesh-darshan-leh/",
+        "label": "District Leh Tourism"
+      }
+    ],
+    "checkedOn": "2026-10-13"
+  }
+}
