@@ -40,3 +40,8 @@ The email OTP UI and endpoints have been replaced by Google login. Set GOOGLE_CL
 
 ### Review photos
 Reviews accept up to three JPEG/PNG/WebP photos. The browser resizes to 1280px and re-encodes JPEG (removing original metadata); the API validates raster signatures, base64, count, and a 600 KB per-image limit. Images are stored in the review document in MongoDB, so no ephemeral Render disk or separate storage credentials are required. Photos share the review moderation status and are removed with account deletion. Monitor MongoDB storage as uploads grow; move to dedicated object storage for larger scale.
+
+### Review moderation
+Set `ADMIN_EMAILS` in the hosting environment to your Google account email (comma-separated for multiple administrators). Register/login through Google, then open `/admin/` or the moderation link in your profile. Temporary accounts cannot access moderation. The server enforces access on every API request. Pending photos and reviews are published together; rejection requires a reason. Decisions store administrator ID, timestamp and reason; stale decisions return a conflict. Published reviews can be moved back to pending or rejected. The queue is paginated.
+
+The default owner administrator is `namansinha64@gmail.com`, only after verified Google sign-in. `ADMIN_EMAILS` overrides this default; include the owner email when configuring additional administrators. The Render blueprint also sets this address. Existing Render services do not need an environment update for the default owner to work.

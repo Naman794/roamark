@@ -19,3 +19,5 @@ services:
         sync: false
       - key: GOOGLE_AUTH_SECRET
         generateValue: true
+      - key: ADMIN_EMAILS
+        value: namansinha64@gmail.com
