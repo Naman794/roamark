@@ -21,3 +21,9 @@ services:
         generateValue: true
       - key: ADMIN_EMAILS
         value: namansinha64@gmail.com
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
