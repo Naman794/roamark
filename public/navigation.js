@@ -10,7 +10,7 @@
  document.addEventListener('keydown',event=>{if(event.key==='Escape')close(true)});
  document.addEventListener('focusin',event=>{if(menu&&!menu.contains(event.target))close(false)});
  const initials=name=>String(name||'Traveler').trim().split(/\s+/).slice(0,2).map(part=>Array.from(part)[0]||'').join('').toUpperCase()||'T';
- const picture=value=>{try{const u=new URL(value);return u.protocol==='https:'&&/^[a-z0-9-]+\.googleusercontent\.com$/i.test(u.hostname)&&!u.username&&!u.password&&!u.port?u.href:''}catch{return ''}};
+ const picture=value=>{if(typeof value==='string'&&value.length<280000&&/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(value))return value;try{const u=new URL(value);return u.protocol==='https:'&&/^[a-z0-9-]+\.googleusercontent\.com$/i.test(u.hostname)&&!u.username&&!u.password&&!u.port?u.href:''}catch{return ''}};
  function signedOut(){
   const link=document.createElement('a');link.id='account';link.className='primary';link.href='/profile/';link.textContent='Sign in / Sign up';
   (menu||account).replaceWith(link);account=link;menu=null;
@@ -24,7 +24,7 @@
   const panel=document.createElement('div');panel.id='account-dropdown';panel.className='account-dropdown';
   const identity=document.createElement('div');identity.className='account-menu-identity';
   const name=document.createElement('strong');name.textContent=user.name||'Traveler';const subtitle=document.createElement('span');subtitle.textContent='Your Roamark account';identity.append(name,subtitle);panel.append(identity);
-  const links=[['My profile','/profile/'],['Saved places','/profile/?tab=saved'],['My reviews','/profile/?tab=reviews'],['Write a review','/review/']];
+  const links=[['My profile','/profile/'],['Edit profile','/profile/?edit=1'],['Saved places','/profile/?tab=saved'],['My reviews','/profile/?tab=reviews'],['Write a review','/review/']];
   if(user.isAdmin)links.push(['Admin panel','/admin/']);
   for(const [label,href] of links){const link=document.createElement('a');link.textContent=label;link.href=href;link.onclick=()=>close(false);panel.append(link)}
   const logout=document.createElement('button');logout.type='button';logout.className='account-menu-logout';logout.textContent='Log out';
