@@ -66,3 +66,14 @@ All 497 India pages and Bali/Kyoto now build from one shared template. The six f
 
 ### Upvotes and downvotes
 Reviews and traveler photos have one reaction per account: up (1), down (-1), or neutral (0, deletes the record). Switching replaces the existing reaction; tapping the selected arrow removes it. Counts are displayed separately, and Top voted ordering uses the net score (up minus down), with recency breaking ties. The Feel Index and return-verdict chart are unaffected. Existing records without a direction count as upvotes, so no destructive data migration is needed. Older boolean-vote clients remain supported.
+
+
+## Search, sharing and analytics
+
+`npm run build` generates destination pages, per-page descriptions, canonical and Open Graph/Twitter metadata, `public/sitemap.xml` and `public/robots.txt`. Set `SITE_URL` to the production HTTPS origin (default: `https://roamark.onrender.com`) before building if the domain changes. Internal account, moderation, review and confirmation pages are marked noindex and excluded from the sitemap. The sitemap lists existing public routes, not every destination in India. Unknown browser routes return the custom page with HTTP 404; unknown API routes keep JSON 404 responses.
+
+GA4 uses `G-VN6QQXWDF5`. The shared navigation loads an optional Analytics module on all pages; Google scripts load only after acceptance. Cookie settings can withdraw or restore consent. Account, admin, review-form and thank-you pages are excluded from measurement. Page URLs omit queries and fragments; no custom account or review data is sent. Keep enhanced measurement of form interactions and user-provided data collection disabled in the GA web stream. Configure retention and access in the GA property, then verify Realtime after deployment and acceptance.
+
+The public contact page lists owner Naman Sinha, business name Roamark Pvt Ltd, location New Delhi, Delhi, India, and naman@roamark.in, as provided by the owner. No street address or postal code has been supplied.
+
+The shared `public/mobile.css` is loaded after page styles on every generated and authored page. It covers phone and tablet navigation, compact cards, stacked forms/planners, readable form inputs, touch controls, safe-area-aware fixed actions, responsive moderation/media and reduced motion. Landscape phones use an in-flow CTA to preserve screen space. Real-device/browser visual verification is still required; a local browser download was unavailable during this change.
