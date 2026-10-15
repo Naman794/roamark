@@ -64,7 +64,7 @@ installVideoUploads(app,{auth,adminOnly,knownPlace,rate,VideoUpload,PlaceVideo})
 installVideoUploads(app,{auth,adminOnly:(req,res,next)=>next(),knownPlace,rate,VideoUpload,PlaceVideo,routePrefix:'/api/review-videos/upload',purpose:'review',saveUpload:(ticket,details)=>ReviewVideo.findOneAndUpdate({owner:ticket.owner,publicId:ticket.publicId},{$set:{owner:ticket.owner,place:ticket.place,...details}},{upsert:true,new:true})});
 installModeration(app,{auth,Review,rate});
 app.use('/api',(req,res)=>res.status(404).json({error:'API endpoint not found.'}));
-app.use(express.static(path.join(root,'public')));app.use((req,res)=>res.status(404).send('Page not found. Return to /india/ to explore places.'));
+app.use(express.static(path.join(root,'public')));app.use((req,res)=>res.status(404).sendFile(path.join(root,'public','404.html')));
 app.use((err,req,res,next)=>{const info=err.status?{code:err.publicCode||'REQUEST_FAILED',message:err.status===413?'Photos are too large. Use up to three smaller images.':err.message}:/Mongo|Mongoose/.test(err.name||'')?databaseFailure(err):{code:'INTERNAL_ERROR',message:'An unexpected server error occurred. Check the hosting logs using the request reference.'};const reference=randomBytes(6).toString('hex');console.error(JSON.stringify({event:'request_failed',reference,path:req.path,errorType:err.name,errorCode:err.publicCode||err.code||info.code}));res.status(err.status||503).json({error:info.message,code:info.code,reference});});
 if(!process.env.VERCEL&&process.env.NODE_ENV!=='test')app.listen(process.env.PORT||3000);
 export default app;
