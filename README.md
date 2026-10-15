@@ -63,3 +63,6 @@ The review form accepts one optional video using the same Cloudinary optimizatio
 
 ### Shared destination layout
 All 497 India pages and Bali/Kyoto now build from one shared template. The six former custom layouts retain their detailed editorial content in expandable sections using destinations.json. place-guides.json contains nine sourced background guides; remaining pages clearly label place-specific research gaps and offer category-specific planning checklists. Guide background and planning suggestions are distinct from current operational verification.
+
+### Upvotes and downvotes
+Reviews and traveler photos have one reaction per account: up (1), down (-1), or neutral (0, deletes the record). Switching replaces the existing reaction; tapping the selected arrow removes it. Counts are displayed separately, and Top voted ordering uses the net score (up minus down), with recency breaking ties. The Feel Index and return-verdict chart are unaffected. Existing records without a direction count as upvotes, so no destructive data migration is needed. Older boolean-vote clients remain supported.
