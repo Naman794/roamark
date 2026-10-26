@@ -1,83 +1,58 @@
 # Roamark
-Travel places, hiking routes and monasteries, with contextual traveler opinions. Owned by **Naman Sinha**. Contact: naman@roamark.in.
 
-## Stack
-Node.js 22+, Express, MongoDB Atlas / Mongoose, SMTP / Nodemailer. Responsive Poppins-based frontend, retaining the existing travel design. The framework choice keeps one deployable service for Render and Vercel; no Next.js migration is required to run it.
+**Find places that feel right.**
 
-## Run
-1. `npm ci`
-2. Copy `.env.example` to `.env` and configure values.
-3. `npm run build`
-4. `npm start`
+Go curious. Come back honest.
 
-Browse http://localhost:3000. Set APP_URL to the canonical public URL. Same-deployment browser requests are also recognized automatically. Without MongoDB/SMTP settings, browsing works and account requests fail clearly; no fake OTP fallback exists. OTP_SECRET must be a long random secret. Use a verified SMTP sender.
+Roamark helps travelers discover destinations through personal perspectives, practical context and the feeling of being there. A beautiful photograph tells part of the story; the people who visited help tell the rest.
 
-## Hosting
-Render: import this repo as a Node web service, build `npm ci && npm run build`, start `npm start`, health path `/api/health`. A render.yaml is included. Configure environment values in the host, never commit secrets.
+[Explore Roamark](https://roamark.onrender.com/) · [Our story](https://roamark.onrender.com/about/) · [Contact us](mailto:naman@roamark.in)
 
-Vercel: import repo, Node 22+, build `npm run build`; server.js exports the Express application for Vercel's native Express support. Set the same environment values, including APP_URL for the chosen deployment origin. Preview deployments accept their own same-origin browser requests; keep APP_URL set to your canonical URL. Configure MongoDB Atlas network access for the deployment host.
+## Discover your kind of journey
 
-## Coverage and integrity
-497 India directory entries cover all 28 states and 8 UTs. Each has an internal linked profile generated at build time. Six existing longer guides are retained, including Bali and Kyoto. Most India profiles still await researched information. No exhaustive-coverage or item-level verification claim is made. No fabricated scores are displayed.
+Explore destinations, hiking trails, monasteries, villages and viewpoints. Read destination guides, browse traveler contributions, save places and plan a visit around what matters to you.
 
-Dedicated `/profile/` supports real email OTP sign-in, saved places, review submission, pending review status, logout and account deletion. OTP expires after 10 minutes, has five verification attempts, and is hashed with OTP_SECRET. Sessions expire after seven days; only hashed tokens are stored. Mutation requests require the deployment’s own origin or the configured APP_URL origin; foreign and missing browser origins are rejected. Rate limits are persisted in MongoDB and remain consistent across serverless instances.
+Our directory is growing. It is not a complete list of every place, and local access, weather and travel conditions should be checked before a trip. Images labeled as illustrative are travel inspiration rather than verified photographs of a destination.
 
-## Moderation and launch prerequisites
-New reviews are **pending**. There is no admin dashboard yet. An authorized operator must review records and set `status` to `published` in MongoDB before public review endpoints return them. Published review feeds are available via `/api/places/:slug/reviews` and linked place pages. Existing detailed guides calculate their Feel Index from published reviews; homepage cards show no invented score. No fake legacy scores are used.
+## More than a single rating
 
-Ages 14–17 are intended for future participation, but registration is blocked until verifiable guardian consent is implemented. Adult eligibility is currently self-declared, not an identity verification service. Photo upload, visit evidence, analytics SDKs, advertising, affiliate links and bookings are not integrated. Legal pages describe actual behavior and require deployment-specific legal review, provider/backup retention details and operating-address disclosures before broad public launch.
+The **Feel Index** brings together four perspectives:
 
-Tests cover route generation, syntax, safe deployment without credentials and origin validation. Actual MongoDB transactions and SMTP delivery require configured integration checks before accepting public reviews. Hosting and images/fonts may process technical requests. External photographs are illustrative, not verified images of every named stop.
+- **Wonder:** How memorable was the experience?
+- **Breathing Room:** Was there space to enjoy it?
+- **Local Soul:** How connected did it feel to the place?
+- **Worth the Effort:** Was the journey worth the time and energy?
 
-## Temporary access
-Set `ENABLE_TEMP_ACCESS=true` on a private evaluation deployment to enable Param / `param123` and Sachin / `sachin123`. Optional `PARAM_ACCESS_PASSWORD` and `SACHIN_ACCESS_PASSWORD` override these defaults. MongoDB is required; accounts are created on their first successful sign-in. SMTP is not required for this path. Sessions expire in one hour. Temporary accounts can save places and submit reviews for evaluation. Their reviews remain pending moderation and carry a temporary-account indicator; they are never labeled email-verified. Set the flag to false or remove it to immediately invalidate this access, including existing sessions. Do not enable these shared simple credentials on a public production deployment.
+Visit context, written opinions and a return verdict add meaning to those scores. Community votes help surface useful reviews and photos; they are separate from destination ratings.
 
-## Troubleshoot service errors
-Open `/api/readiness` on your deployed URL. It checks the actual MongoDB connection without exposing credentials. Responses distinguish missing URI, invalid URI, authentication failure, missing database permissions, DNS failure and an unreachable cluster. `emailConfigured` reports whether required email settings exist, not that delivery has been validated. `/api/health` remains a lightweight process health check. Server logs include a sanitized error type/code and request reference, never the MongoDB URI or passwords. Atlas Network Access must permit the deployment’s outbound network, and the database user needs readWrite permissions. A profile visitor without a session now gets the sign-in form without a database connection attempt.
+## A community of perspectives
 
-## Google login (current account method)
-The email OTP UI and endpoints have been replaced by Google login. Set GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET and GOOGLE_AUTH_SECRET (32+ random characters), plus the canonical APP_URL and MONGODB_URI. Create a Web application OAuth client in Google Cloud. Add `https://YOUR-DOMAIN/api/auth/google/callback` as an authorized redirect URI, matching APP_URL exactly. Set up the consent screen and permitted users as needed. Only `openid email profile` scopes are requested. Register creates an account only after Google returns a verified email; Login requires an existing account. Existing email accounts can be linked through their matching verified Google email. No Google password or long-lived Google token is stored. State, PKCE and a short-lived HttpOnly authorization cookie protect the redirect flow. Temporary Param/Sachin access remains separately gated. SMTP and OTP_SECRET are no longer needed for account login. Actual Google consent and callback require configured credentials and a live end-to-end check.
+Travelers can share reviews, photos and videos from their own visits. Contributions are moderated before publication. Account sign-in does not independently verify a visit, and every review represents its author's experience rather than a guarantee.
 
-### Review photos
-Reviews accept up to three JPEG/PNG/WebP photos. The browser resizes to 1280px and re-encodes JPEG (removing original metadata); the API validates raster signatures, base64, count, and a 600 KB per-image limit. Images are stored in the review document in MongoDB, so no ephemeral Render disk or separate storage credentials are required. Photos share the review moderation status and are removed with account deletion. Monitor MongoDB storage as uploads grow; move to dedicated object storage for larger scale.
+For questions about participation, personal information or using the service, read our [Privacy Policy](https://roamark.onrender.com/privacy/) and [Terms & Conditions](https://roamark.onrender.com/terms/).
 
-### Review moderation
-Set `ADMIN_EMAILS` in the hosting environment to your Google account email (comma-separated for multiple administrators). Register/login through Google, then open `/admin/` or the moderation link in your profile. Temporary accounts cannot access moderation. The server enforces access on every API request. Pending photos and reviews are published together; rejection requires a reason. Decisions store administrator ID, timestamp and reason; stale decisions return a conflict. Published reviews can be moved back to pending or rejected. The queue is paginated.
+## About Roamark
 
-The default owner administrator is `namansinha64@gmail.com`, only after verified Google sign-in. `ADMIN_EMAILS` overrides this default; include the owner email when configuring additional administrators. The Render blueprint also sets this address. Existing Render services do not need an environment update for the default owner to work.
+Roamark was founded by **Naman Sinha**, inspired by the difficulty of knowing whether a destination has the particular vibe a traveler is looking for.
 
-### Destination video and itinerary sections
-Owner administrators can add a destination-specific YouTube video from `/admin/`. Only validated HTTPS YouTube links are accepted; arbitrary embed HTML is not stored. Public videos load the YouTube privacy-enhanced player only after a visitor clicks Play, with a notice that playback contacts YouTube. Add only relevant footage with permission to embed. Archive removes a video from public display without deleting its record. No footage is seeded for unknown destinations.
-The itinerary builder stores up to seven days of timed stops and notes in the current browser for each destination. It is a browser-local draft, not an account-synced or researched travel route.
+**Business:** Roamark Pvt Ltd
 
-### File video uploads and optimization
-Set `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET` in Render/Vercel. The owner uploads directly to Cloudinary using a server-signed request bound to a random, non-overwritable asset ID. No API secret reaches the browser. MongoDB stores video metadata and expiring, owner-bound upload tickets. Completion re-fetches asset metadata server-side and checks its optimized playback before adding the destination record.
-Uploads support MP4/MOV/WebM, up to 100 MB and 3 minutes (provider plan may have stricter limits). An eager H.264/AAC MP4 transformation uses q_auto:best with no explicit resize; original is retained. This optimizes visual quality and delivery, but cannot promise identical pixels or a smaller file for every source. Cloudinary storage, transformation and bandwidth quotas apply. Invalid or abandoned uploads may leave original assets in Cloudinary; manage them in its console. Archive hides a destination video; it does not delete media storage.
+**Location:** New Delhi, Delhi, India
 
-### Community voting and feeling chart
-Signed-in accounts can mark published reviews helpful and upvote individual published photos. Authors cannot vote on their own contributions. Vote records use a unique (user, review, photo index) key and an explicit desired state so repeat requests do not double-count. Each contribution can be unvoted. Rate limits apply. Account deletion removes its votes and votes on its deleted reviews. Temporary accounts share this feature while temporary access is enabled; Google access does not prove one person has only one account.
-Homepage top rankings use all published reviews/photos before applying display limits. Destination lists offer Top voted and Latest. The return-verdict donut shows counts of the three review verdicts. Popularity votes do not affect the Feel Index, which remains the equal-weight average of rating dimensions. No published reviews means no invented chart or score.
+**Contact:** [naman@roamark.in](mailto:naman@roamark.in)
 
-### Videos in traveler reviews
-The review form accepts one optional video using the same Cloudinary optimization settings as destination uploads. Signed-in users receive purpose-bound, owner-bound upload tickets; completed media is stored separately and accepted only for the uploading user's selected place. Videos are attached to a pending review and shown publicly only through published reviews. Administrators can preview the video before approving text/photos/video together. Uploaded originals remain in Cloudinary; removing from a draft, archiving a review or deleting MongoDB metadata does not purge cloud media.
+## Copyright and permission to reuse
 
-### Shared destination layout
-All 497 India pages and Bali/Kyoto now build from one shared template. The six former custom layouts retain their detailed editorial content in expandable sections using destinations.json. place-guides.json contains nine sourced background guides; remaining pages clearly label place-specific research gaps and offer category-specific planning checklists. Guide background and planning suggestions are distinct from current operational verification.
+**© 2026 Naman Sinha. All rights reserved.**
 
-### Upvotes and downvotes
-Reviews and traveler photos have one reaction per account: up (1), down (-1), or neutral (0, deletes the record). Switching replaces the existing reaction; tapping the selected arrow removes it. Counts are displayed separately, and Top voted ordering uses the net score (up minus down), with recency breaking ties. The Feel Index and return-verdict chart are unaffected. Existing records without a direction count as upvotes, so no destructive data migration is needed. Older boolean-vote clients remain supported.
+Roamark is a proprietary project. Public visibility of this repository does **not** make it open source or grant a general license to use its contents.
 
+Except where applicable law or GitHub's applicable platform terms permit otherwise, you must obtain **prior written permission** from the rights holder before copying, modifying, reusing, redistributing, publishing, sublicensing, selling or deploying Roamark-owned materials, including its software, original designs, documentation and brand assets. This applies to personal, educational and commercial projects. Giving credit alone does not replace permission.
 
-## Search, sharing and analytics
+GitHub's terms may permit viewing and forking within its service. Those platform permissions do not constitute a separate license from us to reuse or deploy the project. Nothing in this notice restricts rights that cannot lawfully be restricted.
 
-`npm run build` generates destination pages, per-page descriptions, canonical and Open Graph/Twitter metadata, `public/sitemap.xml` and `public/robots.txt`. Set `SITE_URL` to the production HTTPS origin (default: `https://roamark.onrender.com`) before building if the domain changes. Internal account, moderation, review and confirmation pages are marked noindex and excluded from the sitemap. The sitemap lists existing public routes, not every destination in India. Unknown browser routes return the custom page with HTTP 404; unknown API routes keep JSON 404 responses.
+Third-party components, photographs, fonts, trademarks and traveler contributions remain subject to their respective owners' rights and applicable terms. We do not claim ownership of those materials or change their licenses.
 
-GA4 uses `G-VN6QQXWDF5`. The shared navigation loads an optional Analytics module on all pages; Google scripts load only after acceptance. Cookie settings can withdraw or restore consent. Account, admin, review-form and thank-you pages are excluded from measurement. Page URLs omit queries and fragments; no custom account or review data is sent. Keep enhanced measurement of form interactions and user-provided data collection disabled in the GA web stream. Configure retention and access in the GA property, then verify Realtime after deployment and acceptance.
+For permission, licensing or collaboration requests, email **[naman@roamark.in](mailto:naman@roamark.in)** with the materials you wish to use, your intended use and whether it is commercial. Please obtain written approval before proceeding. Silence is not permission.
 
-The public contact page lists owner Naman Sinha, business name Roamark Pvt Ltd, location New Delhi, Delhi, India, and naman@roamark.in, as provided by the owner. No street address or postal code has been supplied.
-
-The shared `public/mobile.css` is loaded after page styles on every generated and authored page. It covers phone and tablet navigation, compact cards, stacked forms/planners, readable form inputs, touch controls, safe-area-aware fixed actions, responsive moderation/media and reduced motion. Landscape phones use an in-flow CTA to preserve screen space. Real-device/browser visual verification is still required; a local browser download was unavailable during this change.
-
-Signed-in navigation uses a circular avatar and an account dropdown (profile, saved places, reviews, write a review, admin for administrators, and logout). Google profile pictures are saved from authenticated userinfo on the next successful Google sign-in and are restricted to HTTPS Google image hosts. Existing accounts without a stored picture show initials until they sign in again. Native disclosure behavior supports keyboard activation; Escape, clicking outside or moving focus outside closes the menu.
-
-Profile editing is available from the account dropdown and the journal sidebar. Authenticated PATCH /api/me accepts only display name (1–40 characters), optional bio (240), location (80), and a bounded raster avatar (200 KB). The browser center-crops and resizes uploads before sending them. Uploaded or removed photos are preserved across later Google sign-ins. Email, roles and identity fields cannot be changed through this endpoint. Historical review author names remain snapshots; the updated name is used for new reviews. Bio and location currently appear only in the owner’s journal.
+See [LICENSE](LICENSE) for the proprietary rights notice.
